@@ -1,5 +1,7 @@
-"""
-Write a program that reads 10 numbers from
-the user and prints the largest one
-"""
-
+############### Part 1
+print('Please enter 10 numbers in one raw, separated by a space')
+numbers = input()
+print('These are the numbers:')
+print(numbers)
+print('The biggest value is:')
+print(max(numbers))
