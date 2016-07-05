@@ -1,5 +1,7 @@
-"""
-Write a program that randomizes integers in a loop
-until it finds a number that is divisable by: 7, 13 and 15
-"""
+####################### Part 5
+while 1:
+    r = randint(1, 1000000)
+    if (r % 7 == 0) and (r % 13 == 0) and (r % 15 == 0):
+        print('{}'.format(r))
+        break
 
