@@ -1,15 +1,19 @@
 ################### Part 6
-r1 = randint(1, 10)
-r2 = randint(1, 10)
-maximum = r1 * r2
-print('r1 = %d r2 = %d max quotient = %d' % (r1, r2, maximum))
-i = 1
-min_quotient = []
-while i <= maximum:
-    if (i % r1 == 0) and (i % r2 == 0):
-        min_quotient.append(i)
-        #print('{}'.format(min_quotient))
+from random import randint
+
+r1 = randint(1, 1000)
+r2 = randint(1, 1000)
+
+print('%d  %d' % (r1, r2))
+
+
+mini = min(r1,r2)
+maxi = max(r1,r2)
+i = int(maxi/mini)
+
+while True:
+    if i*mini % maxi == 0:
+        break
     i += 1
 
-print('%d' % min(min_quotient))
-
+print('The least common multiple of the two numbers is: {}'.format(i*mini))
