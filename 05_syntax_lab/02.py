@@ -1,4 +1,6 @@
 ############### Part 2
+from random import randint
+
 sum=0
 L = 7
 for i in range(0,L):
