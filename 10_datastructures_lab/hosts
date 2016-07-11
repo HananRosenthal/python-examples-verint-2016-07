@@ -1,5 +1,26 @@
-work=10.0.0.2
-router=10.0.0.1
+################Part 3
+import argparse
 
-mycar=10.0.0.5
-home=194.90.2.1
+parser = argparse.ArgumentParser(description='The program gets a host name from the user and search for it in a table')
+parser.add_argument('-p','--path', help='hosts file full path', required = True)
+kuku = parser.parse_args()
+
+hosts={} #dictionary declaration
+
+#build the dictionary
+with open(kuku.path, 'r') as f:
+    for line in f:
+        (device, address) = line.split("=")
+        hosts[device] = address
+
+#get a string from user and search for a match
+while True:
+    strr = input('Please enter a device name, enter to exit')
+    if strr == "":
+        break
+    elif strr in hosts:
+        print(hosts[strr])
+    else:
+        print('Device {} not found'.format(strr))
+
+print('Thank you and goodbye')
