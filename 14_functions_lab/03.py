@@ -1,5 +1,10 @@
-"""
-Write a function that calculates the sum
-of the 10th digit from all arguments passed to it
-"""
+
+def tens_digit_sum(*nums):
+    list=[]
+    for number in nums:
+        if type(number) is int:
+            list.append(number)
+    return  sum( [ (int(x/10)%10) for x in list] )
+
+print(tens_digit_sum(140,220,1120))
 
