@@ -1,9 +1,5 @@
-
 def get_words(max_len, *words):
-    list=[]
-    for word in words:
-        if len(word) > max_len:
-            list.append(word)
-    return  list
+    return [word for word in words if len(word) > max_len]
 
-print( get_words(3,'a','aa','vvdd', 'tresd', 'ww') )
+	
+print( get_words(4,'a','aa','vvdd', 'tresd', 'ww') )
