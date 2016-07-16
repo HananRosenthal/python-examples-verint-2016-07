@@ -1,10 +1,16 @@
-"""
-Write a function groupby that takes a list
-and a function and returns a dictionary
-keyd by the return value of the function on the list items
+import collections
+import string
 
-For example:
-    groupby(lambda s: s[0], ['foo', 'fi', 'hello', 'hi'])
-    returns: { 'f': ['foo','fi'], 'h': ['hello', 'hi'] }
-"""
+f = lambda c, wList: [w for w in wList if w[0] == c]
 
+def groupby(f, *words):
+    myDict = {}
+    list=[]
+    for c in string.ascii_letters:
+        list = f(c, words)
+        if len(list) > 0:
+            myDict[c] = list
+    print(myDict)
+
+words = ["hello", "hi", "help", "bye", "here", "modify", "movie", "ticho", "time"]
+groupby(f, *words)
