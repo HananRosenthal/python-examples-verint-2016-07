@@ -1,16 +1,15 @@
 import collections
 import string
 
-f = lambda c, wList: [w for w in wList if w[0] == c]
+f = lambda s: s[0]
 
 def groupby(f, *words):
     myDict = {}
-    list=[]
-    for c in string.ascii_letters:
-        list = f(c, words)
-        if len(list) > 0:
-            myDict[c] = list
+    for word in words:
+        k = f(word)
+        list = [w for w in words if w[0] == k]
+        myDict[k] = list
     print(myDict)
 
-words = ["hello", "hi", "help", "bye", "here", "modify", "movie", "ticho", "time"]
+words = ["hello", "hi", "help", "bye", "here", "modify", "movie", "typo", "time"]
 groupby(f, *words)
