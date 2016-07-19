@@ -1,12 +1,14 @@
-"""
-Write a program that reads data
-from property files.
-Each line in the file can either be:
-    An empty line
-    A comment line (Start with #)
-    A property line (of the form key = value)
+import argparse
+import string
+import re
 
-Write a program that takes a property file name and key
-as command line arguments and prints the requested value
-"""
+parser = argparse.ArgumentParser(description='Returns a parameter that match a given key')
+parser.add_argument('-p','--path', help='definitions file', required = True)
+parser.add_argument('-k','--key', help='key', required = True)
+kuku = parser.parse_args()
 
+with open(kuku.path, 'r') as f:
+    for line in f:
+        if kuku.key in line:
+            res = re.search("=\s?(\w*)", line)
+            print(res.group(1))
