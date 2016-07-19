@@ -10,7 +10,7 @@ kuku = parser.parse_args()
 with open(kuku.path, 'r') as f:
     for line in f:
         if kuku.key in line:
-            if re.search('^\s?#', line):
+            if re.search('^\s+#', line):
                 continue
             res = re.search("=\s+(\w*)", line)
             print(res.group(1))
