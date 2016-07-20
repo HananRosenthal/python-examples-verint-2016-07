@@ -9,8 +9,9 @@ kuku = parser.parse_args()
 
 with open(kuku.path, 'r') as f:
     for line in f:
-        if kuku.key in line:
-            if re.search('^\s+#', line):
-                continue
+        temp = line.split()
+        if temp[0].startswith('#'):
+            continue
+        elif temp[0] == kuku.key:
             res = re.search("=\s+(\w*)", line)
             print(res.group(1))
