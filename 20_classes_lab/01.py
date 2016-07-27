@@ -7,7 +7,7 @@ class Summer(object):
         self.val = 0
 
     def add(self, *num):
-        self.val += sum([i for i in num])
+        self.val += sum(num)
 
     def total(self):
         return self.val
