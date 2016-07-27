@@ -1,17 +1,16 @@
 ##### Exercise-2 ##################
 class MyCounter(object):
-    counter = []
+    counter = 0
 
     def __init__(self):
-        self.counter.append(1)
+        MyCounter.counter += 1
+        #print(MyCounter.counter)
 
-    @classmethod
     def count(self):
-        return sum(MyCounter.counter)
-
+        return MyCounter.counter
 
 for _ in range(10):
     c1 = MyCounter()
 
 # should print 10
-print(MyCounter.count())
+print(MyCounter.count(object))
